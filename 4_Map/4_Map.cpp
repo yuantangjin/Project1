@@ -18,11 +18,12 @@ ostream& operator<< (ostream& os, const map<T1, T2> mp) {
 
 template<typename T>
 void out(T mm) {
+	cout << "-------------------------------------------------" << endl;
 	for (auto p:mm)
 	{
 		cout << p.first << "	" << p.second << endl;
 	}
-
+	cout << "+++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 }
 //map容器的使用
 void test() {
@@ -142,8 +143,23 @@ void test4() {
 		cout << i->first << ":" << i->second << endl;
 	}
 }
+//multimap	多表映射
+void test5() {
+	multimap<string, int> mm = {
+		{"C#",80},
+		{"C++",15},
+		{"C++",17},
+		{"C++",35},
+		{"Java",47},
+		{"Java",45},
+		{"python",10},
+		{"C#",80},
+		{"python",40}
+	};
+	out(mm);
+}
 int main() {
-	test4();
+	test5();
 	system("pause");
 	return 0;
 }
