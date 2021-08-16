@@ -94,8 +94,56 @@ void test2() {
 	}
 
 }
+
+void test3() {
+	map<int, string> m = {
+		{41,"翼鸳"},
+		{42,"小青蛙"},
+		{144,"小冷漠"},
+		{19,"铁男"},
+		{87,"眞芯"},
+		{140,"雨辞"}
+	};
+	cout << m << endl;
+	m.insert({ 126,"小煜" });
+	cout << m << endl;
+	m.erase(40);
+	cout << m << endl;
+
+	auto iter = m.find(87);
+	//find函数通过key的值寻找迭代器，不存在返回end；
+	if (iter==m.end())
+	{
+		cout << "该key的值不存在" << endl;
+		return;
+	}
+	else
+	{
+		cout << iter->first << " " << iter->second << endl;
+	}
+	try
+	{
+		m.at(141);
+	}
+	catch (const std::exception&p)
+	{
+		cout << p.what() << endl;
+	}
+}
+void test4() {
+	map<int, string> m{
+		{0,"零"},{1,"一"},{2,"二"},{3,"三"},{4,"四"}
+	};
+	auto iter = m.begin();
+	cout << iter->first << " " << iter->second << endl;
+	
+	for (auto i = m.rbegin(); i !=m.rend(); i++)
+	{
+		cout << i->first << ":" << i->second << endl;
+	}
+}
 int main() {
-	test2();
+	test4();
 	system("pause");
 	return 0;
 }
